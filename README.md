@@ -12,7 +12,7 @@ To install:
 3. `python checkGrades.py username password [courseIDs] &`
 
 To run the script, enter your x500, password, and the courseIDs of moodle courses you are enrolled in.
-Example: `./checkGrades.py beach144 super-secret-password 11026 10430`.
+Example: `./checkGrades.py beach144 super-secret-password 11026 10430 &`.
 
 You can find the courseID by navigating to the home page for a class. If the url is https://ay16.moodle.umn.edu/course/view.php?id=11026,
 then 11026 is the courseID.
