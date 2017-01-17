@@ -50,7 +50,7 @@ class GradesWatcher():
 		self.password = password
 		self.courseID = courseID
 		
-	def check_grades():
+	def check_grades(self):
 		updated_grades = get_grades(self.username, self.password, self.courseID)
 		if updated_grades != self.grades:
 			self.notify_grade_change()
