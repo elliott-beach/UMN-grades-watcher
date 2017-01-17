@@ -1,5 +1,5 @@
 I find it annoying that the UMN moodle system doesn't notify you when grades are updated,
-so I wrote a script to check grades automatically. 
+so I wrote a script to check grades automatically. Grades are checked every 60 minutes, and, if your grades changed, I send you an email!
 
 ## USAGE
 
