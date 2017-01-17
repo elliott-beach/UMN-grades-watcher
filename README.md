@@ -1,12 +1,15 @@
 I find it annoying that the UofMN mooodle system doesn't notify you when grades are uploaded,
-so I wrote a script to check grades automatically 
+so I wrote a script to check grades automatically. 
 
 # USAGE
 
 To install:
+
 1. Clone the repo.
-2. pip install mechanize
-3. ./checkGrades.py &
+
+2. Run `pip install mechanize`.
+
+3. `python checkGrades.py username password [courseIDs] &`
 
 To run the script, enter your x500, password, and the courseIDs of moodle courses you are enrolled in.
 Example: `./checkGrades.py beach144 super-secret-password 11026 10430`.
