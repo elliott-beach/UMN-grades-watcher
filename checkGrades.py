@@ -8,6 +8,7 @@ import email
 LOGIN = 'https://ay16.moodle.umn.edu/login'
 GRADES = 'https://ay16.moodle.umn.edu/grade/report/user/index.php'
 EMAIL_DOMAIN = '@umn.edu'
+SENDER = 'beach144' + EMAIL_DOMAIN
 
 # source: http://stackoverflow.com/questions/2697039/python-equivalent-of-setinterval
 def set_interval(func, sec):
@@ -21,6 +22,7 @@ def set_interval(func, sec):
 def get_grades(username, password, courseID):
 	"""get all grades for a student with an individual courseID"""
 	browser = mechanize.Browser()
+        browser.set_handle_robots(False) # ignore robots.txt -- I'll scrape what I please.
 	browser.open(LOGIN)
 	browser.select_form(nr=1)
 	browser.form['j_username'] =  username
@@ -59,8 +61,8 @@ class GradesWatcher():
 		self.grades = updated_grades
 
 	def notify_grade_change(self):
-		email_address = username + EMAIL_DOMAIN
-		send_email('beach144@umn.edu', email_address, 'Grades Changed', GRADES)
+		email_address = self.username + EMAIL_DOMAIN
+		send_email(SENDER, email_address, 'Grades Changed', GRADES)
 		# send an email to the email address that grades have changed
 
 	def run(self):
